@@ -7,7 +7,6 @@ export const login = async (payload: LoginPayload) => {
     body: JSON.stringify(payload),
     auth: false,
   });
-  console.log("Received tokens:", tokens);
   setTokens(tokens);
   return tokens;
 };

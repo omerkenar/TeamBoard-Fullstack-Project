@@ -26,10 +26,7 @@ watch(authErrorOpen, (open) => {
 
 const onSubmit = async () => {
   const ok = await auth.login(form);
-  console.log("ok", ok);
   if (ok) {
-    // const redirect = (route.query.redirect as string) || "/";
-    // console.log("redirect", redirect);
     router.push({ name: "dashboard" });
   }
 };

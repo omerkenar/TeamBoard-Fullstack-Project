@@ -14,7 +14,6 @@
       </button>
     </header>
 
-
     <div class="lanes" :class="{ 'is-loading': loading }">
       <article v-for="column in columns" :key="column.id" class="lane">
         <header class="lane__header">
@@ -114,7 +113,6 @@
               </datalist>
             </label>
           </div>
-
 
           <div class="actions">
             <button class="ghost" type="button" @click="closeCreate">
@@ -374,8 +372,6 @@ const applyDrag = <T>(arr: T[], dropResult: DropResult<T>) => {
 };
 
 const onDrop = (column: BoardColumn, dropResult: DropResult<Task>) => {
-  console.log("Drop result:", dropResult);
-  console.log("Target column:", column);
   const payload = dropResult.payload;
   if (payload && !canUpdateTask(payload)) {
     syncLocalLists(props.columns);
@@ -714,4 +710,3 @@ const statusLabel = (status: Task["status"]) => {
   border-radius: 20%;
 }
 </style>
-
